@@ -102,6 +102,7 @@ csiAttacher:
 csiProvisioner:
   image: quay.io/k8scsi/csi-provisioner:v1.0.1
   args:
-    - "--provisioner=cvmfs.csi.cern.ch"
     - "--csi-address=$(ADDRESS)"
     - "--v=5"
+
+provisioner: cvmfs.csi.cern.ch
