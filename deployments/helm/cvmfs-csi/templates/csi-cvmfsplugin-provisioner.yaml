@@ -30,13 +30,12 @@ spec:
             {{- end }}
           env:
             - name: ADDRESS
-              value: {{ .Values.csiPlugin.pluginDirectory }}/csi.sock
+              value: unix:///csi/csi-provisioner.sock
           imagePullPolicy: "IfNotPresent"
           volumeMounts:
             - name: socket-dir
-              mountPath: {{ .Values.csiPlugin.pluginDirectory }}
+              mountPath: /csi
       volumes:
         - name: socket-dir
-          hostPath:
-            path: {{ .Values.csiPlugin.pluginDirectory }}
-            type: DirectoryOrCreate
+          emptyDir:
+            medium: Memory
