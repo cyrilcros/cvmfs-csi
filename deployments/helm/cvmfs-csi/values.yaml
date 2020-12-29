@@ -94,11 +94,6 @@ csiPlugin:
     - "--drivername=cvmfs.csi.cern.ch"
   pluginDirectory: /var/lib/kubelet/plugins/cvmfs.csi.cern.ch
   nodeDriverImage: quay.io/k8scsi/csi-node-driver-registrar:v1.0.2
-csiAttacher:
-  image: quay.io/k8scsi/csi-attacher:v1.0.1
-  args:
-    - "--v=5"
-    - "--csi-address=$(ADDRESS)"
 csiProvisioner:
   image: quay.io/k8scsi/csi-provisioner:v1.0.1
   args:
