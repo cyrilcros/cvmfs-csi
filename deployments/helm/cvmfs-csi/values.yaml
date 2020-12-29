@@ -99,5 +99,10 @@ csiProvisioner:
   args:
     - "--csi-address=$(ADDRESS)"
     - "--v=5"
+csiAttacher:
+  image: quay.io/k8scsi/csi-attacher:v1.0.1
+  args:
+    - "--v=5"
+    - "--csi-address=$(ADDRESS)"
 
 provisioner: cvmfs.csi.cern.ch
